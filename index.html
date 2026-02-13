@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arthunter ‒ Онлайн‑школа рисования</title>
+<!-- Font Awesome for icons -->
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dP8jgVXZC9h7kfKRZQ1JBVL8jO9Pt5JgNvbISfmlA7IpZ9+KwY8PcRPNUoSd+2yFjY0J9pAFuzvNu3NMrGEl0g==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<!-- Append a version query to force browsers to load the latest stylesheet -->
+<link href="style.css?v=20260212" rel="stylesheet"/>
+<!-- Inline critical styles for the mascot hover effect.  We define all mascot styles here to avoid caching issues. -->
+</head>
+<body>
+<header class="site-header">
+<div class="nav-container">
+<div class="nav-logo">
+<img alt="Логотип Arthunter" loading="lazy" src="images/logo.png"/>
+<span>Arthunter</span>
+</div>
+<button aria-controls="primary-nav" aria-expanded="false" class="nav-toggle" type="button"><span class="sr-only">Открыть меню</span><span aria-hidden="true" class="nav-toggle__bars"><span></span></span></button><nav class="nav-links" id="primary-nav">
+<a href="index.html">Главная</a>
+<a href="courses.html">Курсы</a>
+<a href="blog.html">Блог</a>
+<a href="about.html">О нас</a>
+<div class="nav-social" role="group" aria-label="Социальные сети">
+  <a class="nav-social__link" href="https://vk.com/arthunter_school" target="_blank" rel="noopener noreferrer" aria-label="VK">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M4.5 7.5L8.2 17L11.9 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 7.5V17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M20 7.5L14.2 12L20 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <a class="nav-social__link" href="https://t.me/arthunterschool_bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M21 5L10 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M21 5L14 21L10 12L3 9L21 5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <a class="nav-social__link" href="https://www.instagram.com/arthunterschool/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <rect x="6" y="6" width="12" height="12" rx="3.2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="16.2" cy="7.8" r="1" fill="currentColor"/>
+    </svg>
+  </a>
+</div>
+</nav>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-content">
+<div class="hero-text">
+<h1>Откройте своего внутреннего художника</h1>
+<p>Arthunter — современная онлайн‑школа рисования. Мы объединяем мировых художников, инновационные методики, игровые механики и дружественное сообщество, чтобы помочь вам раскрыть творческий потенциал.</p>
+<div class="buttons">
+<a class="btn btn-primary" href="courses.html">Выбрать курс</a>
+<a class="btn btn-secondary" href="#newsletter">Участвовать в марафоне</a>
+</div>
+</div>
+<div class="hero-image">
+<!-- Single mascot image shown as a div.  The id is used for styling and hover effects. -->
+<button aria-controls="achievements" aria-expanded="false" aria-label="Открыть достижения" class="mascot" id="mascot" type="button"></button>
+<div class="mascot-hint" id="mascotHint" aria-hidden="true">
+  <div class="mascot-hint__bubble" role="note" aria-label="Подсказка">
+    <svg class="mascot-hint__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M8.2 11.2V6.8a1.6 1.6 0 0 1 3.2 0v3.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M11.4 10.2V6.3a1.6 1.6 0 0 1 3.2 0v4.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M14.6 11.2V7.4a1.6 1.6 0 0 1 3.2 0v6.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M8.2 11.2v3.7c0 2.7 1.9 4.9 4.6 4.9h2.2c2.1 0 3.8-1.5 4.2-3.5l.6-3.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="mascot-hint__text" id="mascotHintText">Нажмите на героя</span>
+  </div>
+</div>
+<!-- Achievement cards container. Hidden by default; becomes visible after the mascot spin. -->
+<div aria-hidden="true" class="achievement-cards" id="achievements">
+<!-- Card 1: Первый шедевр (Common) -->
+<!-- Each achievement card receives a rarity class so it can be colour‑coded via CSS.  The number of stars reflects the rarity level. -->
+<div class="achievement-card common">
+<div class="card-label">
+<h4 class="card-title">Первый шедевр</h4>
+<div class="card-stars">
+<span class="star"></span>
+</div>
+</div>
+</div>
+<!-- Card 2: Мастер пастели (Rare) -->
+<div class="achievement-card rare">
+<div class="card-label">
+<h4 class="card-title">Мастер пастели</h4>
+<div class="card-stars">
+<span class="star"></span>
+<span class="star"></span>
+</div>
+</div>
+</div>
+<!-- Card 3: Гений акварели (Legendary) -->
+<div class="achievement-card legendary">
+<div class="card-label">
+<h4 class="card-title">Гений акварели</h4>
+<div class="card-stars">
+<span class="star"></span>
+<span class="star"></span>
+<span class="star"></span>
+<span class="star"></span>
+</div>
+</div>
+</div>
+<!-- Card 4: Digital волшебник (Epic) -->
+<div class="achievement-card epic">
+<div class="card-label">
+<h4 class="card-title">Digital волшебник</h4>
+<div class="card-stars">
+<span class="star"></span>
+<span class="star"></span>
+<span class="star"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tagline prompting users to collect stars and exchange them for courses -->
+<p class="stars-note">Копите звёзды — обменивайте на курсы!</p>
+</section>
+<!-- Features Section -->
+<section class="features">
+<h2>Среда, в которой хочется творить</h2>
+<div class="features-grid">
+<div class="feature-item">
+<i class="fa-solid fa-palette"></i>
+<h3>Лучшие художники</h3>
+<p>Учитесь у признанных мастеров с мировым опытом. Наши преподаватели имеют академическое образование и десятки лет практики.</p>
+</div>
+<div class="feature-item">
+<i class="fa-solid fa-gamepad"></i>
+<h3>Игровой подход</h3>
+<p>Мы используем игровые механики, чтобы обучение было увлекательным и мотивирующим. Переходите от простого к сложному, набирая очки и открывая новые уровни.</p>
+</div>
+<div class="feature-item">
+<i class="fa-solid fa-users"></i>
+<h3>Сообщество</h3>
+<p>Закрытый чат позволяет обмениваться опытом, получать обратную связь от кураторов и поддерживать мотивацию. Вы не останетесь одни.</p>
+</div>
+<div class="feature-item">
+<i class="fa-solid fa-certificate"></i>
+<h3>Сертификат и портфолио</h3>
+<p>По окончании курса выдаётся сертификат, а коллекция готовых работ станет основой вашего портфолио.</p>
+</div>
+</div>
+</section>
+<!-- Path Finder Section -->
+<section class="path-finder">
+<h2>Найдите свой курс</h2>
+<form class="path-form" onsubmit="return false;">
+<div>
+<label>Ваш уровень подготовки:</label>
+<div>
+<input checked="" id="lvl-beginner" name="level" type="radio" value="beginner"/>
+<label for="lvl-beginner">Новичок</label>
+</div>
+<div>
+<input id="lvl-intermediate" name="level" type="radio" value="intermediate"/>
+<label for="lvl-intermediate">Средний</label>
+</div>
+<div>
+<input id="lvl-advanced" name="level" type="radio" value="advanced"/>
+<label for="lvl-advanced">Продвинутый</label>
+</div>
+</div>
+<div>
+<label for="medium-select">Выберите материал:</label>
+<select id="medium-select">
+<option value="Any">Любой</option>
+<option value="Watercolor">Акварель</option>
+<option value="Pastel">Пастель</option>
+<option value="Digital">Цифровой</option>
+</select>
+</div>
+<div>
+<label for="time-range">Сколько времени готовы уделять картине?</label>
+<input id="time-range" max="2" min="1" step="1" type="range" value="1"/>
+<div class="range-labels">
+<span>1-2 часа</span>
+<span>3+ часа</span>
+</div>
+</div>
+</form>
+<div class="suggestions" id="suggestions"></div>
+</section>
+<!-- Testimonials Section -->
+<section class="testimonials">
+<h2>Отзывы наших учеников</h2>
+<div class="testimonial-grid">
+<div class="testimonial-item">
+<p>«Благодаря Arthunter я наконец-то научилась рисовать акварелью. Игровая система и доброжелательная поддержка сделали обучение лёгким и увлекательным!»</p>
+<span>— Катя, 16 лет</span>
+</div>
+<div class="testimonial-item">
+<p>«Преподаватели с большим опытом объясняют материал доступно, а сертификат помог мне поступить в художественную школу»</p>
+<span>— Иван, 15 лет</span>
+</div>
+<div class="testimonial-item">
+<p>«Мне нравится атмосфера. В чате можно показать работу и получить полезные советы. Чувствуешь, что ты не один!»</p>
+<span>— Алина, 17 лет</span>
+</div>
+</div>
+</section>
+<!-- Newsletter / Marathon Section -->
+<section class="newsletter" id="newsletter">
+<h2>Хотите участвовать в бесплатных мастер‑классах?</h2>
+<p>Подпишитесь на рассылку, и мы вышлем приглашение на ближайшие бесплатные марафоны с участием известных художников.</p>
+<form id="newsletterForm" class="newsletter-form">
+  <label class="sr-only" for="newsletterEmail">E-mail</label>
+  <div class="newsletter-form__row">
+    <input id="newsletterEmail" class="newsletter-input" type="email" required placeholder="Ваш e‑mail"/>
+    <button class="btn btn-primary newsletter-btn" type="submit">Подписаться</button>
+  </div>
+  <div class="newsletter-form__hint">Без спама. Только анонсы бесплатных мастер‑классов и марафонов.</div>
+</form>
+</section>
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+<h2>Связаться с нами</h2>
+<div class="contact-container">
+<div class="contact-item">
+<i class="fa-solid fa-envelope"></i>
+<span>support@arthunter.school (отдел поддержки)</span>
+</div>
+<div class="contact-item">
+<i class="fa-solid fa-envelope"></i>
+<span>sales@arthunter.school (отдел продаж)</span>
+</div>
+<div class="contact-item">
+<i class="fa-brands fa-telegram"></i>
+<span><a href="https://t.me/ArthunterSupport" rel="noopener noreferrer" style="color:var(--primary-color);" target="_blank">Telegram</a> — написать в мессенджер</span>
+</div>
+<div class="contact-item">
+<i class="fa-brands fa-whatsapp"></i>
+<span><a href="https://wa.me/79990000000" rel="noopener noreferrer" style="color:var(--primary-color);" target="_blank">WhatsApp</a> — написать в мессенджер</span>
+</div>
+<div class="contact-item">
+<i class="fa-solid fa-clock"></i>
+<span>График работы: Пн‑Сб 9:00–18:00 (MSK). В экстренных случаях отвечаем вне графика.</span>
+</div>
+<button class="btn btn-primary support-btn" id="supportOpen" type="button">Задать вопрос</button>
+</div>
+</section>
+<!-- Support Modal -->
+<div aria-hidden="true" aria-labelledby="supportModalTitle" aria-modal="true" class="modal" id="supportModal" role="dialog">
+<div class="modal-content">
+<span class="close-btn" id="closeModal">×</span>
+<h3 id="supportModalTitle">Обратиться в службу поддержки</h3>
+<form id="supportForm">
+<label for="supportName">Имя</label>
+<input id="supportName" required="" type="text"/>
+<label for="supportEmail">Email</label>
+<input id="supportEmail" required="" type="email"/>
+<label for="supportMessage">Сообщение</label>
+<textarea id="supportMessage" required="" rows="4"></textarea>
+<button class="btn btn-primary" type="submit">Отправить</button>
+</form>
+</div>
+</div>
+<footer>
+<p>© 2026 Arthunter. Все права защищены.</p>
+</footer>
+<!-- Append version query to force browser to load the latest script -->
+<script src="script.js?v=16"></script>
+</body>
+</html>

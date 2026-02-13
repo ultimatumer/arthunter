@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Пастельные пейзажи — курс Arthunter</title>
+  <link rel="stylesheet" href="style.css?v=20260213"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img alt="Логотип Arthunter" loading="lazy" src="images/logo.png"/>
+      <span>Arthunter</span>
+    </div>
+    <button aria-controls="primary-nav" aria-expanded="false" class="nav-toggle" type="button">
+      <span class="sr-only">Открыть меню</span>
+      <span aria-hidden="true" class="nav-toggle__bars"><span></span></span>
+    </button>
+
+    <nav class="nav-links" id="primary-nav">
+      <a href="index.html">Главная</a>
+      <a href="courses.html" aria-current="page">Курсы</a>
+      <a href="blog.html">Блог</a>
+      <a href="about.html">О нас</a>
+
+      <div class="nav-social" role="group" aria-label="Социальные сети">
+        <a class="nav-social__link" href="https://vk.com/arthunter_school" target="_blank" rel="noopener noreferrer" aria-label="VK">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M4.5 7.5L8.2 17L11.9 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 7.5V17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M20 7.5L14.2 12L20 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a class="nav-social__link" href="https://t.me/arthunterschool_bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M21 5L10 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M21 5L14 21L10 12L3 9L21 5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a class="nav-social__link" href="https://www.instagram.com/arthunterschool/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <rect x="6" y="6" width="12" height="12" rx="3.2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="16.2" cy="7.8" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="course-page-hero">
+    <div class="container">
+      <h1 class="course-page-hero__title">Пастельные пейзажи</h1>
+      <p class="course-page-hero__subtitle">Мягкие переходы и живые пейзажи на кончиках ваших пальцев</p>
+    </div>
+  </section>
+
+  <section class="course-page">
+    <div class="container course-page__grid">
+      <article class="course-info-card">
+        <h2>О курсе</h2>
+        <p>
+          В этом курсе вы познакомитесь с миром пастели. Под руководством Михаила Козлова вы освоите техники
+          штриховки, растушёвки и смешивания, а главное — научитесь передавать атмосферу в пейзажах.
+        </p>
+
+        <ul class="course-points">
+          <li>Основы мягкой и масляной пастели: штриховка, растушёвка, работа с цветом.</li>
+          <li>Построение атмосферных пейзажей: свет, воздух и объём.</li>
+          <li>Приёмы смешивания и наслаивания оттенков для богатых фактур.</li>
+          <li>Практика на примере разных сезонов и погодных условий.</li>
+          <li>Разбор работ и поддержка преподавателя в чате.</li>
+        </ul>
+
+        <div class="course-meta">
+          <span><strong>Уровень:</strong> Средний</span>
+          <span class="dot">•</span>
+          <span><strong>Материал:</strong> Пастель</span>
+          <span class="dot">•</span>
+          <span><strong>Длительность:</strong> <span id="courseDuration">—</span> ч</span>
+        </div>
+
+        <div class="course-actions">
+          <button class="btn btn-primary" type="button" data-enroll-open data-plan="Курс" data-price="">Записаться</button>
+          <a class="btn btn-ghost" href="#program">Картины курса</a>
+        </div>
+
+        <div class="course-mini">
+          <div class="course-mini__title">Материалы (минимум)</div>
+          <div class="course-mini__list">
+            <span class="mini-chip">пастель 12–24</span>
+            <span class="mini-chip">бумага для пастели</span>
+            <span class="mini-chip">клячка/ластик</span>
+            <span class="mini-chip">салфетки</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="course-cover" aria-label="Пример работы с курса">
+        <div class="course-cover__frame">
+          <img src="images/mikhail/severnoe_siyanie.png" alt="Пример пастельной работы: Северное сияние" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="course-perks" aria-label="Преимущества">
+    <div class="container">
+      <div class="course-perks__grid">
+        <div class="perk-card">
+          <div class="perk-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img"><path d="M12 7v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="perk-card__text">Старт обучения сразу после оплаты</div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img"><path d="M7 7h10v14H7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="perk-card__text">Доступ к курсу бессрочно</div>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img"><path d="M12 2a10 10 0 1 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M2 12h20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 2c3 3 5 6.5 5 10s-2 7-5 10c-3-3-5-6.5-5-10S9 5 12 2Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="perk-card__text">Рисуйте онлайн из любой точки мира</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="course-program" id="program">
+    <div class="container">
+      <div class="course-program__head">
+        <h2>Картины курса</h2>
+        <p>Пять работ, которые собираются шаг за шагом. За каждую картину начисляются звезды.</p>
+      </div>
+
+      <div class="course-program__grid">
+        <article class="course-lesson-card" data-stars="3" data-min="45" data-max="60">
+          <div class="course-lesson-card__media">
+            <img src="images/mikhail/yarkiy_zakat.png" alt="Яркий закат" loading="lazy"/>
+            <div class="course-lesson-card__badge">
+              <span class="stars" aria-label="3 из 5"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star star--off" aria-hidden="true">★</span><span class="star star--off" aria-hidden="true">★</span></span>
+              <span class="course-lesson-card__badgeText">3 звезды</span>
+            </div>
+          </div>
+          <div class="course-lesson-card__body">
+            <h3 class="course-lesson-card__title">Яркий закат</h3>
+            <p class="course-lesson-card__desc">Нарисуйте спокойный вечерний пейзаж</p>
+            <div class="course-lesson-card__meta">
+              <span class="meta-chip">⏱ 45–60 минут</span>
+              <span class="meta-chip">Пастель</span>
+            </div>
+            <ul class="course-lesson-card__learn">
+              <li>Делать мягкую растяжку в небе: от более тёмного тона к светлому.</li>
+              <li>Рисовать горы простыми силуэтами и показывать дальний план “легче и светлее”.</li>
+              <li>Делать отражение в воде короткими горизонтальными штрихами.</li>
+              <li>Добавлять деревья без перегруза: ствол + большие пятна кроны, чтобы выглядело аккуратно.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="course-lesson-card" data-stars="3" data-min="40" data-max="55">
+          <div class="course-lesson-card__media">
+            <img src="images/mikhail/ledentsovoe_more.png" alt="Леденцовое море" loading="lazy"/>
+            <div class="course-lesson-card__badge">
+              <span class="stars" aria-label="3 из 5"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star star--off" aria-hidden="true">★</span><span class="star star--off" aria-hidden="true">★</span></span>
+              <span class="course-lesson-card__badgeText">3 звезды</span>
+            </div>
+          </div>
+          <div class="course-lesson-card__body">
+            <h3 class="course-lesson-card__title">Леденцовое море</h3>
+            <p class="course-lesson-card__desc">Тёплое небо лимонно-розового заката и яркое “конфетное” море с волнистыми полосками</p>
+            <div class="course-lesson-card__meta">
+              <span class="meta-chip">⏱ 40–55 минут</span>
+              <span class="meta-chip">Пастель</span>
+            </div>
+            <ul class="course-lesson-card__learn">
+              <li>Делать тёплый градиент неба (лимонный → розовый) без “грязи” в цвете.</li>
+              <li>Рисовать море полосками и волнами, чтобы оно выглядело ярким и сказочным.</li>
+              <li>Делать простой кораблик из базовых фигур: овал/прямоугольник + треугольник.</li>
+              <li>Добавлять “искры” на воде точками и короткими штрихами, не перегружая работу.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="course-lesson-card" data-stars="4" data-min="45" data-max="60">
+          <div class="course-lesson-card__media">
+            <img src="images/mikhail/severnoe_siyanie.png" alt="Северное сияние" loading="lazy"/>
+            <div class="course-lesson-card__badge">
+              <span class="stars" aria-label="4 из 5"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star star--off" aria-hidden="true">★</span></span>
+              <span class="course-lesson-card__badgeText">4 звезды</span>
+            </div>
+          </div>
+          <div class="course-lesson-card__body">
+            <h3 class="course-lesson-card__title">Северное сияние</h3>
+            <p class="course-lesson-card__desc">Ночное небо с россыпью звёзд и мягкими цветными лентами северного сияния</p>
+            <div class="course-lesson-card__meta">
+              <span class="meta-chip">⏱ 45–60 минут</span>
+              <span class="meta-chip">Пастель</span>
+            </div>
+            <ul class="course-lesson-card__learn">
+              <li>Рисовать северное сияние мягкими волнистыми лентами и делать их “светящимися”.</li>
+              <li>Делать отражение в воде простыми размазанными вертикальными пятнами, без сложной детализации.</li>
+              <li>Рисовать ели силуэтами из треугольников (быстро и аккуратно).</li>
+              <li>Добавлять маленький сюжетный акцент — домик с тёплым окном — и правильно “посадить” его в композицию.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="course-lesson-card" data-stars="5" data-min="50" data-max="70">
+          <div class="course-lesson-card__media">
+            <img src="images/mikhail/kosmicheskiy_sad.png" alt="Космический сад" loading="lazy"/>
+            <div class="course-lesson-card__badge">
+              <span class="stars" aria-label="5 из 5"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></span>
+              <span class="course-lesson-card__badgeText">5 звезд</span>
+            </div>
+          </div>
+          <div class="course-lesson-card__body">
+            <h3 class="course-lesson-card__title">Космический сад</h3>
+            <p class="course-lesson-card__desc">Ночное небо с переходом от глубокого синего к фиолетовому и тёплой полосой у горизонта.</p>
+            <div class="course-lesson-card__meta">
+              <span class="meta-chip">⏱ 50–70 минут</span>
+              <span class="meta-chip">Пастель</span>
+            </div>
+            <ul class="course-lesson-card__learn">
+              <li>Делать ночной градиент и добавлять “тёплую полоску” на горизонте.</li>
+              <li>Рисовать луну с сиянием и звёзды точками разного размера.</li>
+              <li>Собрать большой цветок из овалов и добавить листья, не уходя в детали.</li>
+              <li>Добавлять маленькие элементы (бабочки, падающая звезда) так, чтобы композиция стала живее.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="course-lesson-card" data-stars="4" data-min="45" data-max="60">
+          <div class="course-lesson-card__media">
+            <img src="images/mikhail/vozdushnyy_karnaval.png" alt="Воздушный карнавал" loading="lazy"/>
+            <div class="course-lesson-card__badge">
+              <span class="stars" aria-label="4 из 5"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star star--off" aria-hidden="true">★</span></span>
+              <span class="course-lesson-card__badgeText">4 звезды</span>
+            </div>
+          </div>
+          <div class="course-lesson-card__body">
+            <h3 class="course-lesson-card__title">Воздушный карнавал</h3>
+            <p class="course-lesson-card__desc">Яркий сюжет с лёгким настроением и чистыми цветовыми переходами.</p>
+            <div class="course-lesson-card__meta">
+              <span class="meta-chip">⏱ 45–60 минут</span>
+              <span class="meta-chip">Пастель</span>
+            </div>
+            <ul class="course-lesson-card__learn">
+              <li>Делать мягкие облака и ощущение воздуха в небе.</li>
+              <li>Собирать композицию из простых форм без “перерисовывания”.</li>
+              <li>Добавлять яркие акценты так, чтобы работа выглядела цельно.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="course-summary" aria-label="Итоги курса">
+        <div class="course-summary__card">
+          <div class="course-summary__row">
+            <div class="course-summary__label">Всего звезд за курс</div>
+            <div class="course-summary__value"><span id="courseStarsTotal">—</span></div>
+          </div>
+          <div class="course-summary__row">
+            <div class="course-summary__label">Длительность курса</div>
+            <div class="course-summary__value"><span id="courseHoursTotal">—</span> ч</div>
+          </div>
+          <div class="course-summary__note">Звезды начисляются за каждую картину и копятся в вашем профиле.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="course-plans" aria-label="Варианты участия">
+    <div class="container">
+      <div class="course-plans__head">
+        <h2>Выберите вариант участия</h2>
+        <p>Можно идти в своём темпе — или подключить поддержку, если хочется обратной связи.</p>
+      </div>
+
+      <div class="plans-grid">
+        <article class="plan-card">
+          <div class="plan-card__top">
+            <div class="plan-card__title">Рисую сам</div>
+            <div class="plan-card__tag">для самостоятельных</div>
+          </div>
+          <ul class="plan-card__list">
+            <li>5 уроков-картин + разбор ключевых моментов</li>
+            <li>Доступ к курсу бессрочно</li>
+            <li>Чек-лист материалов и подсказки по цветам</li>
+            <li>Накопление звезд за работы</li>
+          </ul>
+          <div class="plan-card__price">5&nbsp;990&nbsp;₽</div>
+          <button class="btn btn-primary plan-card__btn" type="button" data-enroll-open data-plan="Рисую сам" data-price="5990">Записаться</button>
+        </article>
+
+        <article class="plan-card plan-card--featured">
+          <div class="plan-card__top">
+            <div class="plan-card__title">С поддержкой</div>
+            <div class="plan-card__tag">обратная связь</div>
+          </div>
+          <ul class="plan-card__list">
+            <li>Всё из «Рисую сам»</li>
+            <li>Поддержка в чате: вопросы по ходу работы</li>
+            <li>Проверка работ и короткие рекомендации</li>
+            <li>Подсказки по ошибкам “как исправить быстро”</li>
+          </ul>
+          <div class="plan-card__price">7&nbsp;990&nbsp;₽</div>
+          <button class="btn btn-primary plan-card__btn" type="button" data-enroll-open data-plan="С поддержкой" data-price="7990">Записаться</button>
+        </article>
+
+        <article class="plan-card">
+          <div class="plan-card__top">
+            <div class="plan-card__title">VIP</div>
+            <div class="plan-card__tag">максимум внимания</div>
+          </div>
+          <ul class="plan-card__list">
+            <li>Всё из «С поддержкой»</li>
+            <li>Личная обратная связь по каждой работе</li>
+            <li>Разбор композиции и цвета “как у взрослых”</li>
+            <li>Приоритетные ответы в чате</li>
+          </ul>
+          <div class="plan-card__price">19&nbsp;990&nbsp;₽</div>
+          <button class="btn btn-primary plan-card__btn" type="button" data-enroll-open data-plan="VIP" data-price="19990">Записаться</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="course-examples" aria-label="Примеры работ Михаила">
+    <div class="container">
+      <div class="course-examples__head">
+        <h2>Примеры работ Михаила</h2>
+        <p>Листайте как в инст — это не уроки курса, а работы “из жизни”.</p>
+      </div>
+
+      <div class="examples-carousel" id="examplesCarousel">
+        <div class="examples-rail" id="examplesRail" tabindex="0" aria-label="Карусель примеров">
+          <figure class="example-card">
+            <img src="images/mikhail/examples/mikhail_1_teplyy_tuman.png" alt="Тёплый туман" loading="lazy"/>
+            <figcaption>Тёплый туман</figcaption>
+          </figure>
+          <figure class="example-card">
+            <img src="images/mikhail/examples/mikhail_2_parizhskiy_ugolok.png" alt="Парижский уголок" loading="lazy"/>
+            <figcaption>Парижский уголок</figcaption>
+          </figure>
+          <figure class="example-card">
+            <img src="images/mikhail/examples/mikhail_3_shtormovoy_mayak.png" alt="Штормовой маяк" loading="lazy"/>
+            <figcaption>Штормовой маяк</figcaption>
+          </figure>
+          <figure class="example-card">
+            <img src="images/mikhail/examples/mikhail_4_klenovyy_park.png" alt="Кленовый парк" loading="lazy"/>
+            <figcaption>Кленовый парк</figcaption>
+          </figure>
+          <figure class="example-card">
+            <img src="images/mikhail/examples/mikhail_5_zimniy_dvor.png" alt="Зимний двор" loading="lazy"/>
+            <figcaption>Зимний двор</figcaption>
+          </figure>
+          <figure class="example-card">
+            <img src="images/mikhail/examples/mikhail_6_chernilnaya_noch.png" alt="Чернильная ночь" loading="lazy"/>
+            <figcaption>Чернильная ночь</figcaption>
+          </figure>
+        </div>
+        <div class="examples-dots" id="examplesDots" aria-label="Навигация по слайдам"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="copyright">© 2026 Arthunter. Все права защищены.</div>
+  </div>
+</footer>
+
+<!-- Enroll modal -->
+<div class="enroll-modal" id="enrollModal" aria-hidden="true">
+  <div class="enroll-modal__overlay" data-enroll-close></div>
+  <div class="enroll-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="enrollTitle">
+    <button class="enroll-modal__close" type="button" aria-label="Закрыть" data-enroll-close>×</button>
+    <div class="enroll-modal__magic" aria-hidden="true"></div>
+
+    <h2 class="enroll-modal__title" id="enrollTitle">Введите e-mail адрес и сформируйте заказ</h2>
+    <p class="enroll-modal__subtitle" id="enrollSubtitle">Мы пришлём детали участия и ссылку на оплату.</p>
+
+    <form class="enroll-form" id="enrollForm" novalidate>
+      <input type="hidden" name="course" value="Пастельные пейзажи"/>
+      <input type="hidden" name="plan" id="enrollPlan" value=""/>
+      <input type="hidden" name="price" id="enrollPrice" value=""/>
+
+      <label class="enroll-form__label" for="enrollEmail">E-mail</label>
+      <input class="enroll-form__input" id="enrollEmail" name="email" type="email" autocomplete="email" placeholder="name@example.com" required/>
+
+      <div class="enroll-form__meta" id="enrollMeta" aria-live="polite"></div>
+
+      <button class="btn btn-primary enroll-form__submit" type="submit">Сформировать заказ</button>
+      <div class="enroll-form__ok" id="enrollOk" hidden>Готово! Мы отправили письмо с деталями на ваш e-mail.</div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
