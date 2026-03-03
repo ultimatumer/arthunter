@@ -90,13 +90,112 @@
           <a class="btn btn-ghost" href="#program">Картины курса</a>
         </div>
 
-        <div class="course-mini">
-          <div class="course-mini__title">Материалы (минимум)</div>
+        <div class="course-mini" id="pastelMaterials">
+          <div class="course-mini__titleWrap">
+            <div class="course-mini__title">Материалы (минимум)</div>
+            <span class="course-mini__badge">обязательно</span>
+          </div>
           <div class="course-mini__list">
             <span class="mini-chip">пастель 12–24</span>
             <span class="mini-chip">бумага для пастели</span>
             <span class="mini-chip">клячка/ластик</span>
             <span class="mini-chip">салфетки</span>
+          </div>
+
+          <p class="course-mini__intro">Проверьте, что уже есть дома. Остальное — докупите. Если сомневаетесь, берите базовый вариант: он точно подойдёт.</p>
+
+          <div class="materials-toolbar" role="group" aria-label="Действия со списком материалов">
+            <a class="btn btn-ghost btn-mini" id="downloadPastelPdf" href="#">Скачать список PDF</a>
+            <button class="btn btn-ghost btn-mini" type="button" id="printPastelList">Распечатать</button>
+            <span class="materials-toolbar__hint">Чтобы взять с собой в магазин</span>
+          </div>
+
+          <div class="materials-status" aria-live="polite">
+            <p><strong>Отмечено:</strong> <span id="materialsCheckedCount">0</span> из <span id="materialsTotalCount">0</span></p>
+            <p><strong>Осталось купить обязательных:</strong> <span id="materialsRequiredLeft">0</span></p>
+          </div>
+
+          <label class="materials-check materials-check--sync">
+            <input type="checkbox" class="materials-checkbox" id="materialsOwnListCheck"/>
+            <span>Сверился(ась) со своим списком — всё ок</span>
+          </label>
+          <p class="materials-note">Если у вас уже есть материалы — просто отметьте, что они подходят.</p>
+
+          <button class="materials-toggle" type="button" id="materialsToggleBtn" aria-expanded="false" aria-controls="materialsExpandedBlock">
+            Показать рекомендуемый список
+          </button>
+
+          <div class="materials-expanded" id="materialsExpandedBlock" hidden>
+            <p class="materials-subtitle">Обязательно к занятиям</p>
+
+            <article class="materials-card" data-card-type="required">
+              <header class="materials-card__head">
+                <h3>Пастель</h3>
+                <span class="materials-tag">обязательно</span>
+              </header>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Набор пастели (24–48 цветов)</span></label>
+              <p class="materials-text">Хватит для курса, не нужно сразу «самый большой». Если нет: можно 24 цвета + потом докупить любимые оттенки.</p>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Белый брусок (отдельно)</span></label>
+              <p class="materials-text">Белый уходит быстрее всего. Если нет: временно — самый светлый из набора, но лучше докупить белый.</p>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Чёрный брусок (отдельно)</span></label>
+              <p class="materials-text">Для глубины и контраста. Если нет: подойдёт тёмно-коричневый/тёмно-серый, но лучше чёрный.</p>
+            </article>
+
+            <article class="materials-card" data-card-type="required">
+              <header class="materials-card__head">
+                <h3>Бумага</h3>
+                <span class="materials-tag">обязательно</span>
+              </header>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Бумага для пастели (фактурная) или пастельный блокнот</span></label>
+              <p class="materials-text">Фактура держит слой и растушёвку. Если нет: плотная матовая бумага (временно).</p>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Формат A4–A3 (на выбор)</span></label>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Листы по количеству + запас 2–3 листа</span></label>
+            </article>
+
+            <article class="materials-card" data-card-type="required">
+              <header class="materials-card__head">
+                <h3>Стирание и чистота</h3>
+                <span class="materials-tag">обязательно</span>
+              </header>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Клячка (мягкий ластик)</span></label>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Обычный ластик</span></label>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Салфетки / бумажные полотенца</span></label>
+            </article>
+
+            <article class="materials-card" data-card-type="required">
+              <header class="materials-card__head">
+                <h3>Растушёвка</h3>
+                <span class="materials-tag">обязательно</span>
+              </header>
+              <p class="materials-text">Выберите 1–2 варианта — этого достаточно.</p>
+              <label class="materials-check"><input type="checkbox" class="materials-checkbox" data-required="true"/> <span>Ватные палочки / спонжики / бумажные растушёвки</span></label>
+              <p class="materials-text">Если ничего нет: можно растушёвывать пальцем, но будет больше грязи и «съедается» фактура.</p>
+            </article>
+
+            <details class="materials-accordion">
+              <summary>По желанию: расширить палитру и детали</summary>
+              <div class="materials-accordion__inner">
+                <article class="materials-card" data-card-type="optional">
+                  <header class="materials-card__head">
+                    <h3>Расширить палитру</h3>
+                    <span class="materials-tag materials-tag--optional">по желанию</span>
+                  </header>
+                  <label class="materials-check"><input type="checkbox" class="materials-checkbox"/> <span>Пастель 48–72 или добор оттенков</span></label>
+                </article>
+
+                <article class="materials-card" data-card-type="optional">
+                  <header class="materials-card__head">
+                    <h3>Детали и комфорт</h3>
+                    <span class="materials-tag materials-tag--optional">по желанию</span>
+                  </header>
+                  <label class="materials-check"><input type="checkbox" class="materials-checkbox"/> <span>Пастельные карандаши</span></label>
+                  <label class="materials-check"><input type="checkbox" class="materials-checkbox"/> <span>Тонированная бумага</span></label>
+                  <label class="materials-check"><input type="checkbox" class="materials-checkbox"/> <span>Фартук, влажные салфетки, защита стола</span></label>
+                </article>
+              </div>
+            </details>
+
+            <p class="materials-note">Можно заменить аналогом — главное, чтобы было удобно работать.</p>
           </div>
         </div>
       </article>

@@ -600,4 +600,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------- Pastel materials checklist (course-pastel) ----------
+  const pastelMaterials = document.getElementById('pastelMaterials');
+  if (pastelMaterials){
+    const toggleBtn = document.getElementById('materialsToggleBtn');
+    const expandedBlock = document.getElementById('materialsExpandedBlock');
+    const checkedCountEl = document.getElementById('materialsCheckedCount');
+    const totalCountEl = document.getElementById('materialsTotalCount');
+    const requiredLeftEl = document.getElementById('materialsRequiredLeft');
+    const allChecks = Array.from(pastelMaterials.querySelectorAll('.materials-checkbox'));
+    const requiredChecks = allChecks.filter((el) => el.dataset.required === 'true');
+
+    const updateMaterialsStatus = () => {
+      const checked = allChecks.filter((el) => el.checked).length;
+      const requiredLeft = requiredChecks.filter((el) => !el.checked).length;
+      if (checkedCountEl) checkedCountEl.textContent = String(checked);
+      if (totalCountEl) totalCountEl.textContent = String(allChecks.length);
+      if (requiredLeftEl) requiredLeftEl.textContent = String(requiredLeft);
+    };
+
+    allChecks.forEach((checkbox) => {
+      checkbox.addEventListener('change', updateMaterialsStatus);
+    });
+
+    toggleBtn?.addEventListener('click', () => {
+      const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+      toggleBtn.textContent = isOpen ? 'Показать рекомендуемый список' : 'Скрыть рекомендуемый список';
+      if (expandedBlock) expandedBlock.hidden = isOpen;
+      if (!isOpen){
+        expandedBlock?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+    });
+
+    document.getElementById('printPastelList')?.addEventListener('click', () => {
+      window.print();
+    });
+
+    document.getElementById('downloadPastelPdf')?.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.print();
+    });
+
+    updateMaterialsStatus();
+  }
+
+
 });
