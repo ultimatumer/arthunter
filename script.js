@@ -378,6 +378,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Recommended materials accordion (course pages)
+  const materialsAccordions = document.querySelectorAll('[data-materials-accordion]');
+  materialsAccordions.forEach((accordion) => {
+    const toggle = accordion.querySelector('[data-materials-toggle]');
+    const panel = accordion.querySelector('[data-materials-panel]');
+    if (!toggle || !panel) return;
+
+    let isOpen = false;
+    panel.style.overflow = 'hidden';
+
+    function setOpen(nextOpen){
+      isOpen = nextOpen;
+      toggle.setAttribute('aria-expanded', String(isOpen));
+
+      if (isOpen){
+        panel.hidden = false;
+        const targetHeight = panel.scrollHeight;
+        panel.style.maxHeight = '0px';
+        panel.style.opacity = '0';
+        panel.style.transform = 'translateY(-6px)';
+        panel.style.transition = prefersReducedMotion
+          ? 'none'
+          : 'max-height 320ms ease, opacity 220ms ease, transform 260ms ease';
+
+        requestAnimationFrame(() => {
+          panel.style.maxHeight = `${targetHeight}px`;
+          panel.style.opacity = '1';
+          panel.style.transform = 'translateY(0)';
+        });
+      } else {
+        const startHeight = panel.scrollHeight;
+        panel.style.maxHeight = `${startHeight}px`;
+        panel.style.opacity = '1';
+        panel.style.transform = 'translateY(0)';
+        panel.style.transition = prefersReducedMotion
+          ? 'none'
+          : 'max-height 260ms ease, opacity 200ms ease, transform 220ms ease';
+
+        requestAnimationFrame(() => {
+          panel.style.maxHeight = '0px';
+          panel.style.opacity = '0';
+          panel.style.transform = 'translateY(-6px)';
+        });
+
+        const onCloseDone = () => {
+          if (!isOpen) panel.hidden = true;
+          panel.removeEventListener('transitionend', onCloseDone);
+        };
+        panel.addEventListener('transitionend', onCloseDone);
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      setOpen(!isOpen);
+    });
+  });
+
   // Totals (stars + hours) for course pages
   const courseDurationElem = document.getElementById('courseDuration');
   const courseStarsTotalElem = document.getElementById('courseStarsTotal');
